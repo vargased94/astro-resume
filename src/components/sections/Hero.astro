@@ -8,87 +8,88 @@ import { hero } from "@/data/en.json"
 ---
 
 <Section>
-  <div class="flex flex-col border-b-2 pb-1 border-gray-300">
-    <h2 class="font-bold">{hero.name}</h2>
-    <h3 class="text-gray-800">{hero.position}</h3>
-    <div class="print:hidden md:hidden grid grid-cols-1 text-gray-800">
-      <!-- <a
-        class="flex items-center hover:underline"
-        href={`tel:${hero.phone}`}
-      >
-        <span class="mr-1">
-          <Phone />
-        </span>
-        {hero.phone}
-      </a> -->
-      <a
-        class="flex items-center hover:underline"
-        href={`mailto:${hero.email}`}
-      >
-        <span class="mr-1">
-          <CarbonEmail />
-        </span>
-        {hero.email}
-      </a>
-      <a
-        class="flex items-center hover:underline"
-        href={hero.github_link}
-        target="_blank"
-      >
-        <span class="mr-1">
-          <CarbonGithub />
-        </span>
-        {hero.github}
-      </a>
-      <a
-        class="flex items-center hover:underline"
-        href={hero.location_link}
-        target="_blank"
-      >
-        <span class="mr-1">
-          <CarbonLocation />
-        </span>
-        {hero.location}
-      </a>
+  <div class="flex flex-row gap-4 md:gap-6 border-b-2 pb-4 border-gray-300">
+    <!-- Imagen de perfil -->
+    <div class="flex-shrink-0 self-start">
+      <img 
+        src={hero.profile_image} 
+        alt={`${hero.name} - ${hero.position}`}
+        class="w-20 h-20 md:w-24 md:h-24 rounded-md"
+      />
     </div>
-    <div class="hidden print:flex md:flex flex-1 space-x-3 text-gray-800">
-      <!-- <a
-        class="flex items-center hover:underline"
-        href={`tel:${hero.phone}`}
-      >
-        <span class="mr-1">
-          <Phone />
-        </span>
-        {hero.phone}
-      </a> -->
-      <a
-        class="flex items-center hover:underline"
-      >
-        <span class="mr-1">
-          <CarbonEmail />
-        </span>
-        {hero.email}
-      </a>
-      <a
-        class="flex items-center hover:underline"
-        href={hero.github_link}
-        target="_blank"
-      >
-        <span class="mr-1">
-          <CarbonGithub />
-        </span>
-        {hero.github}
-      </a>
-      <a
-        class="flex items-center hover:underline"
-        href={hero.location_link}
-        target="_blank"
-      >
-        <span class="mr-1">
-          <CarbonLocation />
-        </span>
-        {hero.location}
-      </a>
+    
+    <!-- Información del perfil -->
+    <div class="flex flex-col flex-1 space-y-2">
+      <div class="text-left">
+        <h2 class="font-bold text-lg md:text-xl">{hero.name}</h2>
+        <h3 class="text-gray-800 text-base md:text-lg">{hero.position}</h3>
+      </div>
+      
+      <!-- Enlaces para móvil (stack vertical) -->
+      <div class="print:hidden md:hidden flex flex-col space-y-1 text-gray-800 text-sm">
+        <a
+          class="flex items-center justify-center hover:underline"
+          href={`mailto:${hero.email}`}
+        >
+          <span class="mr-2">
+            <CarbonEmail />
+          </span>
+          {hero.email}
+        </a>
+        <a
+          class="flex items-center justify-center hover:underline"
+          href={hero.github_link}
+          target="_blank"
+        >
+          <span class="mr-2">
+            <CarbonGithub />
+          </span>
+          {hero.github}
+        </a>
+        <a
+          class="flex items-center justify-center hover:underline"
+          href={hero.location_link}
+          target="_blank"
+        >
+          <span class="mr-2">
+            <CarbonLocation />
+          </span>
+          {hero.location}
+        </a>
+      </div>
+      
+      <!-- Enlaces para desktop/print (horizontal) -->
+      <div class="hidden print:flex md:flex flex-wrap gap-4 text-gray-800 text-sm">
+        <a
+          class="flex items-center hover:underline"
+          href={`mailto:${hero.email}`}
+        >
+          <span class="mr-1">
+            <CarbonEmail />
+          </span>
+          {hero.email}
+        </a>
+        <a
+          class="flex items-center hover:underline"
+          href={hero.github_link}
+          target="_blank"
+        >
+          <span class="mr-1">
+            <CarbonGithub />
+          </span>
+          {hero.github}
+        </a>
+        <a
+          class="flex items-center hover:underline"
+          href={hero.location_link}
+          target="_blank"
+        >
+          <span class="mr-1">
+            <CarbonLocation />
+          </span>
+          {hero.location}
+        </a>
+      </div>
     </div>
   </div>
 </Section>
